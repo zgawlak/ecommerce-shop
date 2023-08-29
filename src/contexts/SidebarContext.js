@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState, createContext } from 'react';
 
-const SidebarContext = () => {
-  return <div>SidebarContext</div>;
+export const SidebarContext = createContext();
+
+const SidebarProvider = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
+  return <SidebarContext value={{ isOpen, setIsOpen, handleClose }}>
+    {children}</SidebarContext>;
 };
 
-export default SidebarContext;
+export default SidebarProvider;
