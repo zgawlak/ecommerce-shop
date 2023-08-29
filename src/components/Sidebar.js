@@ -4,6 +4,7 @@ import { IoMdArrowForward } from 'react-icons/io';
 import { fiTrash2 } from 'react-icons/fi';
 import CartItem from '../components/CartItem';
 import { SidebarContext } from '../contexts/SidebarContext';
+import { CartContext } from '../contexts/CartContext';
 
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
