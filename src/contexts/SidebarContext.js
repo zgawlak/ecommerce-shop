@@ -9,8 +9,8 @@ const SidebarProvider = ({ children }) => {
     setIsOpen(false);
   };
 
-  return <SidebarContext value={{ isOpen, setIsOpen, handleClose }}>
-    {children}</SidebarContext>;
+  return <SidebarContext.Provider value={{ isOpen, setIsOpen, handleClose }}>
+    {children}</SidebarContext.Provider>;
 };
 
 export default SidebarProvider;
