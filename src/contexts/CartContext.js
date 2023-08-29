@@ -10,7 +10,7 @@ const CartProvider = ({ children }) => {
       return item.id === id;
     });
     if (cartItem) {
-      const newCart = [...cart].map((item) => {
+      const newCart = [...cart].map(item => {
         if (item.id === id) {
           return {...item, amount: cartItem.amount + 1};
         }
@@ -24,7 +24,7 @@ const CartProvider = ({ children }) => {
       setCart([...cart, newItem]);
     }
   };
-  return <CartContext.Provider value={{ addToCart }}>{children}</CartContext.Provider>;
+  return <CartContext.Provider value={{ cart, addToCart }}>{children}</CartContext.Provider>;
 };
 
 export default CartProvider;
