@@ -6,6 +6,12 @@ import { CartContext } from '../contexts/CartContext';
 const Product = ({ product }) => {
   const { addToCart } = useContext(CartContext);
   const { id, image, category, title, price } = product;
+
+  const CADollar = new Intl.NumberFormat('en-CA', {
+    style: 'currency',
+    currency: 'CAD',
+  });
+
   return <div>
     <div className="border border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden group transition">
       <div className="w-full h-full flex justify-center items-center">
@@ -31,7 +37,7 @@ const Product = ({ product }) => {
       <Link to={`/product/${id}`}>
         <h2 className="font-semibold mb-1">{title}</h2>
       </Link>
-      <div className="font-semibold">${price}</div>
+      <div className="font-semibold">{CADollar.format(price)}</div>
     </div>
   </div>;
 };
