@@ -12,7 +12,7 @@ const CartProvider = ({ children }) => {
     if (cartItem) {
       const newCart = [...cart].map(item => {
         if (item.id === id) {
-          return {...item, amount: cartItem.amount + 1};
+          return { ...item, amount: cartItem.amount + 1 };
         }
         else {
           return item;
@@ -32,7 +32,35 @@ const CartProvider = ({ children }) => {
     setCart(newCart);
   }
 
-  return <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>{children}</CartContext.Provider>;
+  const clearCart = () => {
+    setCart([]);
+  }
+
+  const increaseAmount = (id) => {
+    const cartItem = cart.find(item => item.id === id);
+    addToCart(cartItem, id);
+  };
+
+  const decreaseAmount = (id) => {
+    const cartItem = cart.find(item => item.id === id);
+
+    if (cartItem.amount < 2) {
+      removeFromCart(id);
+    }
+    else {
+      const newCart = cart.map(item => {
+        if (item.id === id) {
+          return { ...item, amount: cartItem.amount - 1 }
+        }
+        else {
+          return item;
+        }
+      });
+      setCart(newCart);
+    }
+  }
+
+  return <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, increaseAmount, decreaseAmount }}>{children}</CartContext.Provider>;
 };
 
 export default CartProvider;
