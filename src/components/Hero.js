@@ -14,7 +14,7 @@ const Hero = () => {
             HOME & FASHION<br />
             <span className="font-semibold">AUTUMN</span>
           </h1>
-          <Link to={'/'} className="self-start uppercase font-semibold underline decoration-2 underline-offset-4 hover:no-underline">
+          <Link to={'/'} className="self-start uppercase font-semibold border-b-2 border-primary transition duration-300 ease-in-out hover:border-transparent">
             Discover More
           </Link>
         </div>
