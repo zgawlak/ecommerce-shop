@@ -7,7 +7,7 @@ const Footer = () => {
       <h2 className="font-semibold text-lg text-white mb-2">Subscribe to our newsletter</h2>
       <div>
         <input type="email" className="p-1 w-full md:w-[250px]" placeholder="your@email.com"></input>
-        <button type="button" className="p-1 mt-2 w-full md:w-[80px] md:ml-1 bg-[#e2f8ed] text-primary">Submit</button>
+        <button type="button" className="p-1 mt-2 w-full md:w-[80px] md:ml-1 bg-orange-200 text-primary">Submit</button>
       </div>
     </div>
     <div className="container mx-auto p-5 mt-5 flex text-white justify-center gap-x-4 flex-wrap items-center">
